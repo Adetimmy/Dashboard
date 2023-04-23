@@ -1,0 +1,83 @@
+{
+  "superheroes": [
+    {
+      "id": 1,
+      "heroes": "Batman",
+      "alterEgo": "Bruce"
+    },
+    {
+      "id": 2,
+      "heroes": "Superman",
+      "alterEgo": "Clark"
+    },
+    {
+      "id": 3,
+      "heroes": "WonderWoman",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "id": 4,
+      "heroes": "CatWoman",
+      "alterEgo": "Elizabeth"
+    },
+    {
+      "id": 5,
+      "heroes": "CatWoman1",
+      "alterEgo": "Elizabeth"
+    },
+    {
+      "name": {
+        "Hero": "The Flash",
+        "AlterEgo": "Barry Allen"
+      },
+      "id": 6
+    },
+    {
+      "The Flash": "",
+      "id": 7
+    },
+    {
+      "The Flash": "",
+      "id": 8
+    },
+    {
+      "Heroes": "The Flash",
+      "alterEgo": "Barry Allen",
+      "id": 9
+    },
+    {
+      "heroes": "The Flash",
+      "alterEgo": "Barry Allen",
+      "id": 10
+    },
+    {
+      "heroes": "Shazam",
+      "alterEgo": "Bill Batson ",
+      "id": 11
+    },
+    {
+      "heroes": "Iron Man",
+      "alterEgo": "Tony Stark",
+      "id": 12
+    },
+    {
+      "heroes": "Green Arrow",
+      "alterEgo": "Oliver Queen",
+      "id": 13
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Adekola"
+    },
+    {
+      "id": 2,
+      "name": "Adewale"
+    },
+    {
+      "id": 3,
+      "name": "Ademola"
+    }
+  ]
+}
