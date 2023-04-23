@@ -12,8 +12,9 @@ import { useStateContext } from './context/ContentProvider'
 
 export const App = () => {
   const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext()
+  const className = `overflow-hidden ${currentMode === 'Dark'? "dark" : ''}`
   return (
-    <div className={currentMode === 'Dark'? "dark" : ''}>
+    <div className ={className}  >
       <BrowserRouter>
         <div className='flex relative  dark:bg-main-dark-bg'>
           <div className='fixed right-4 bottom-4' style={{zIndex:'1000'}}>
