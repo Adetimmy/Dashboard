@@ -14,7 +14,7 @@ interface StyleProps{
 
   const handleCloseSideBar = () => {
     if(activeMenu && screenSize <= 900) {
-      setActiveMenu(false)
+      setActiveMenu(!activeMenu)
     } 
   }
 
@@ -26,9 +26,12 @@ interface StyleProps{
 
   return (
     <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
-      {activeMenu && (<>
+      {activeMenu && (
+      <>
         <div className='flex justify-between items-center'>
-          <Link to ='/' onClick={handleCloseSideBar} className='items-center flex gap-3 ml-3 mt-4 text-xl font-extrabold tracking:tight dark:text-white text-slate-900'>
+          <Link to ='/' 
+          onClick={handleCloseSideBar} 
+          className='items-center flex gap-3 ml-3 mt-4 text-xl font-extrabold tracking:tight dark:text-white text-slate-900'>
             <SiShopware/> <span>Shoppy</span>
           </Link> 
           <Tooltip placement='bottom' label="Menu"> 

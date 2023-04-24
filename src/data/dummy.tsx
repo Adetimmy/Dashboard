@@ -3134,13 +3134,13 @@ export const lineCustomSeries = [
 ];
 
 export const pieChartData = [
-  { x: 'Labour', y: 18, text: '18%' },
-  { x: 'Legal', y: 8, text: '8%' },
-  { x: 'Production', y: 15, text: '15%' },
-  { x: 'License', y: 11, text: '11%' },
-  { x: 'Facilities', y: 18, text: '18%' },
-  { x: 'Taxes', y: 14, text: '14%' },
-  { x: 'Insurance', y: 16, text: '16%' },
+  { x: 'Labour', y: 18, r: '180' },
+  { x: 'Legal', y: 8, r: '80' },
+  { x: 'Production', y: 15, r: '150' },
+  { x: 'License', y: 11, r: '110' },
+  { x: 'Facilities', y: 18, r: '180' },
+  { x: 'Taxes', y: 14, r: '140' },
+  { x: 'Insurance', y: 16, r: '160' },
 ];
 
 export const contextMenuItems = [
