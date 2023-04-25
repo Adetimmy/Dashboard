@@ -1,16 +1,21 @@
 import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip, Inject } from "@syncfusion/ej2-react-charts"
 import { pieChartData, ecomPieChartData } from "../../data/dummy"
-
+import { background } from "@chakra-ui/react"
+import { useStateContext } from '../../context/ContentProvider';
 const Pie = () => {
+const { currentMode } = useStateContext()
+
   return (
     <AccumulationChartComponent
       id="charts"
       legendSettings={{
-        visible: true
+        visible: true,
+        background:'white'
       }}
       enableAnimation={true}
       enableSmartLabels={true}
       tooltip={{enable:true}}
+      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
       
     >
       <Inject services={[PieSeries, AccumulationLegend,

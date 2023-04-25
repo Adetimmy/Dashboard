@@ -15,6 +15,7 @@ const { currentMode } = useStateContext()
       chartArea={{border: {width:0}}}
       tooltip={{enable:true}}
       background={currentMode === 'Dark'? '#33373E' : '#fff' }
+      legendSettings={{background:'white'}}
     >
       <Inject
         services={[DateTime, Legend, Tooltip, LineSeries]}

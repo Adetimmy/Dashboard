@@ -2,7 +2,7 @@
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, ColumnSeries, Category, Tooltip, Legend, RangeColorSettingsDirective, RangeColorSettingDirective } from '@syncfusion/ej2-react-charts';
 
 import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, rangeColorMapping } from '../../data/dummy';
-import { Header } from '../../component';
+import { Header, Text } from '../../component';
 import { useStateContext } from '../../context/ContentProvider';
 
 const ColorMapping = () => {
@@ -11,10 +11,10 @@ const ColorMapping = () => {
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <Header category="Chart" title="Color Mappping" />
+      <Text>USA CLIMATE - WEATHER BY MONTH</Text>
       <div className="w-full">
         <ChartComponent
           id="charts"
-          title='USA CLIMATE - WEATHER BY MONTH'
           primaryXAxis={ColorMappingPrimaryXAxis}
           primaryYAxis={ColorMappingPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}

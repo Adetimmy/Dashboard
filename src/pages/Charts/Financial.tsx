@@ -3,7 +3,7 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Hil
 
 import { financialChartData, FinancialPrimaryXAxis, FinancialPrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../context/ContentProvider';
-import { Header } from '../../component';
+import { Header, Text } from '../../component';
 
 const date1 = new Date('2017, 1, 1');
 
@@ -22,10 +22,10 @@ const Financial = () => {
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <Header category="Chart" title="Financial" />
+      <Text>AAPLE Historical</Text>
       <div className="w-full">
         <ChartComponent
           id="charts"
-          title='AAPLE Historical'
           primaryXAxis={FinancialPrimaryXAxis}
           primaryYAxis={FinancialPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
