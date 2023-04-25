@@ -63,14 +63,14 @@ const ContentProvider = ({children}:contextType) => {
     }
  
   }, [screenSize])
-  
+ 
 
   const handleClick = (clicked:any) => {
     setIsClicked({...initialState, [clicked]:true})
   } 
 
   return (
-    <StateContext.Provider value={{activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, currentColor, currentMode, setCurrentColor, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor } }>
+    <StateContext.Provider value={{activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, currentColor, currentMode, setCurrentColor, setCurrentMode, themeSettings, setThemeSettings, setMode, setColor, screenSize } }>
         {children}
     </StateContext.Provider> 
   )

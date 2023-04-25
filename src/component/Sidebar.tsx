@@ -16,6 +16,7 @@ interface StyleProps{
     if(activeMenu && screenSize <= 900) {
       setActiveMenu(!activeMenu)
     } 
+
   }
 
   // const style= ( {isActive}:Boolean) => isActive? {backgroundColor:currentColor} : {}}
