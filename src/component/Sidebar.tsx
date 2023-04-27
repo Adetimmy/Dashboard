@@ -1,7 +1,7 @@
 import {Link, NavLink} from 'react-router-dom'
 import {SiShopware} from 'react-icons/si'
 import { MdOutlineCancel } from 'react-icons/md'
-import { Tooltip } from '@chakra-ui/react'
+import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { links } from '../data/dummy'
 import { useStateContext } from '../context/ContentProvider'
 
@@ -35,11 +35,11 @@ interface StyleProps{
           className='items-center flex gap-3 ml-3 mt-4 text-xl font-extrabold tracking:tight dark:text-white text-slate-900'>
             <SiShopware/> <span>Shoppy</span>
           </Link> 
-          <Tooltip placement='bottom' label="Menu"> 
+          <TooltipComponent position='BottomCenter' content="Close"> 
             <button type='button' className='text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden' onClick={() => {setActiveMenu(!activeMenu)}}>
               <MdOutlineCancel/>
             </button>
-          </Tooltip>
+          </TooltipComponent>
         </div>
         <div className='ml-10 mt-8'>
           {links.map((item) => (

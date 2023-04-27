@@ -1,6 +1,5 @@
 import React from 'react'
 import { Stack, Header, Text } from '../../component'
-import { SparklineAreaData } from '../../data/dummy'
 import { useStateContext } from '../../context/ContentProvider'
 const Stacked = () => {
   const { currentColor } = useStateContext()
