@@ -10,7 +10,7 @@ const Notification = () => {
   }
 
   return (
-    <div className='w-[400px] min-h-62 bg-light-gray rounded-lg dark:bg-secondary-dark-bg drop-shadow-xl p-8 absolute top-12 mt-5 right-8 z-30'>
+    <div className='w-[400px] min-h-62 bg-light-gray rounded-lg dark:bg-secondary-dark-bg drop-shadow-xl p-8 absolute top-12 mt-5 right-0 z-30'>
       <div className='flex justify-between items-center'>
         <div className='flex justify-center gap-5 items-center'>
           <p className='text-slate-500 dark:text-gray-200 text-lg md:text-xl'>Notifications</p>
