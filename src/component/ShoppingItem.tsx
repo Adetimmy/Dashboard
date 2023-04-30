@@ -1,38 +1,108 @@
 import React from 'react'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { cartData } from '../data/dummy'
+import { useState, useEffect } from 'react'
+import ChartItem from './ChartItem'
+import product5 from '../data/product5.jpg';
+import product6 from '../data/product6.jpg';
+import product7 from '../data/product7.jpg';
 
 
 const ShoppingItem = () => {
+  // const [butterPrice, setButterPrice] = useState<number>(250)
+  // const [tomatoPrice, setTomatoPrice] = useState<number>(450)
+  // const [candyPrice, setCandyPrice] = useState<number>(250)
+  // const [totalPrice, setTotalPrice] = useState<number>(butterPrice +
+  //   tomatoPrice +
+  //   candyPrice)
+    const [quantity, setQuantity] = useState<any>({
+      butterQty:1,
+      tomatoQty:1,
+      candyQty:1,
+      butterPrice:250,
+      tomatoPrice:450,
+      candyPrice:250
+    })
+
+    useEffect(() => {
+      setQuantity((prev: any) => ({
+        ...prev,
+        totalPrice: prev.butterQty * prev.butterPrice + prev.tomatoQty * prev.tomatoPrice + prev.candyQty * prev.candyPrice,
+      }));
+    }, [quantity.butterQty, quantity.tomatoQty, quantity.candyQty, quantity.butterPrice, quantity.tomatoPrice, quantity.candyPrice]);
+
+
+    const handleAddToChart = (item: string) => {
+      setQuantity((prev:any) => {
+        switch (item) {
+          case "butter":
+            return { ...prev, butterQty: prev.butterQty + 1 };
+          case "tomato":
+            return { ...prev, tomatoQty: prev.tomatoQty + 1 };
+          case "candy":
+            return { ...prev, candyQty: prev.candyQty + 1 };
+          default:
+            return prev;
+        }
+      });
+    };
+
+    const handleSubChart = (item: string) => {
+      setQuantity((prev:any) => {
+        switch (item) {
+          case "butter":
+            return { ...prev, butterQty: Math.max(prev.butterQty - 1, 0) };
+          case "tomato":
+            return { ...prev, tomatoQty: Math.max(prev.tomatoQty - 1, 0) };
+          case "candy":
+            return { ...prev, candyQty: Math.max(prev.candyQty - 1, 0) };
+          default:
+            return prev;
+        }
+      });
+    }
+
+
   return (
     <div className="my-8">
-        {cartData.map((item, i) => (
-        <div key={i} className="py-4 px-2 border-b-1 border-color flex gap-8 items-center">
-            <img src={item.image} alt="senderImg" className="w-24 h-20 rounded-lg"/>
+      <ChartItem
+        category = 'butterscotch ice-cream'
+        image = {product5}
+        price = {quantity.butterPrice}
+        quantity = {quantity.butterQty}
+        name='Milk product'
+        onClickAdd={() => handleAddToChart("butter")}
+        onClickSub={() => handleSubChart("butter")}
+      />
+      <ChartItem
+        category = 'Supreme fresh tomato'
+        image = {product6}
+        price = {quantity.tomatoPrice}
+        quantity = {quantity.tomatoQty}
+        name='Vegetable Item'
+        onClickAdd={() => handleAddToChart("tomato")}
+        onClickSub={() => handleSubChart("tomato")}
+      />
+      <ChartItem
+        category = 'Red color candy'
+        image = {product7}
+        price = {quantity.candyPrice}
+        quantity = {quantity.candyQty}
+        name='Food Item'
+        onClickAdd={() => handleAddToChart("candy")}
+        onClickSub={() => handleSubChart("candy")}
+      />
 
-            <div>
-                <h5 className="dark:text-white font-semibold">{item.name}</h5>
-                <p className="text-slate-400 text-sm">{item.category}</p>
-               <div className='flex gap-8 mt-2 items-center'>
-                    <h4 className="dark:text-white font-semibold">{item.price}</h4>
-                    <div className="flex items-center border-1 border-r-0 border-color rounded">
-                      <p className="p-2 border-r-1 dark:border-gray-600 border-color text-red-600 cursor-pointer "><AiOutlineMinus /></p>
-                      <p className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600">0</p>
-                      <p className="p-2 border-r-1 border-color dark:border-gray-600 text-green-600 cursor-pointer"><AiOutlinePlus /></p>
-                    </div>
-               </div>
-            </div>
-        </div>
-        ))}
+       
 
-        <div className='mt-10 px-5'>
+        <div className='mt-10 px-5 dark:text-white'>
           <div className='flex justify-between mb-2'>
             <p>Sub Total</p>
-            <p>$75</p>
+            <p className='font-semibold'>${quantity.totalPrice}</p>
           </div>
           <div className='flex justify-between'>
             <p>Total</p>
-            <p>$75</p>
+            <p className='font-semibold'>${quantity.totalPrice}</p>
           </div>
         </div>
     </div>
