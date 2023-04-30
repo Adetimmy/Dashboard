@@ -21,8 +21,8 @@ const ContentProvider = ({children}:contextType) => {
   const [activeMenu, setActiveMenu] = useState(true)
   const [isClicked, setIsClicked] = useState(initialState)
   const [screenSize, setScreenSize] = useState<null | any>(null)
-  const [currentColor, setCurrentColor] = useState('#03C9D7')
-  const [currentMode, setCurrentMode ] = useState('Light')
+  const [currentColor, setCurrentColor] = useState<string>(localStorage.getItem('colorMode') || '#03C9D7')
+  const [currentMode, setCurrentMode] = useState<string>(localStorage.getItem('themeMode') || 'Light')
   const [themeSettings, setThemeSettings] = useState(false)
   
   const setMode = (e:React.ChangeEvent<HTMLSelectElement>) => {
@@ -40,7 +40,16 @@ const ContentProvider = ({children}:contextType) => {
     localStorage.setItem('colorMode', color)
 
   }
+ 
 
+  
+  // useEffect(() => {
+  //   localStorage.setItem('themeMode', currentMode)
+  // }, [currentMode])
+  
+  // useEffect(() => {
+  //   localStorage.setItem('colorMode', currentColor)
+  // }, [currentColor])
 
 
   // in this effect, i'm not going to set activeMenu to false bcos i want to call the resize function once, that is why the dependency array is empty. so i'll create another use useEffect to track the scrensize
