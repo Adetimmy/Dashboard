@@ -8,9 +8,10 @@ type SparkLineProps = {
   width:string
   data:Object[]
   color:string
+  marker?:object
 }
 
-const SparkLine = ({currentColor,id,type,height,width,data,color}:SparkLineProps) => {
+const SparkLine = ({currentColor,id,type,height,width,data,color,marker}:SparkLineProps) => {
   return (
     <div>
       <SparklineComponent
@@ -25,6 +26,7 @@ const SparkLine = ({currentColor,id,type,height,width,data,color}:SparkLineProps
         xName='x'
         yName='y'
         type={type}
+        markerSettings={marker}
         tooltipSettings={{
           visible:true,
           format:'${x} : data ${y}',
