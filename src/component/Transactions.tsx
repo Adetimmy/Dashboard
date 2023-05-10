@@ -1,6 +1,6 @@
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
 
-import { Button } from '.'
+import { Button, LineChart } from '.'
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
 import { useStateContext } from '../context/ContentProvider'
 import  DropDown  from './MonthDrop'
@@ -56,6 +56,8 @@ const { currentMode, currentColor } = useStateContext()
 
         <p className='text-slate-400 text-sm'>36 recent transactions</p>
     </div>
+
+    
         
     </div>
   )

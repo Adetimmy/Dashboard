@@ -1,10 +1,11 @@
-import { SparkLine, Dough, Trans } from '../component'
+import { SparkLine, Dough, Trans, LineChart } from '../component'
 import { useStateContext } from '../context/ContentProvider'
 import { SparklineAreaData } from '../data/dummy'
+import DropDown from './MonthDrop'
 
 const Subecommerce = () => {
 
-    const {currentColor} = useStateContext()
+    const {currentColor, currentMode} = useStateContext()
   return (
    <>
     <div className='flex justify-center items-center flex-col my-10 gap-8'>
@@ -34,6 +35,16 @@ const Subecommerce = () => {
 
       <div className='flex justify-center mt-7'>
         <Trans/>
+      </div>
+
+      <div className='flex justify-center my-9'>
+        <div className=' rounded-lg p-5 dark:bg-secondary-dark-bg w-[450px] md:w-[550px]'>
+              <div className=' flex justify-between items-center mb-6'>
+                  <h3 className=' text-black dark:text-slate-500 font-semibold text-xl'>Sales Overview</h3>
+                  <DropDown currentMode={currentMode} /> 
+              </div>
+              <LineChart/>
+          </div>
       </div>
    </>
   )
