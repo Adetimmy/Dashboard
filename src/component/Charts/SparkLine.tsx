@@ -13,7 +13,7 @@ type SparkLineProps = {
 
 const SparkLine = ({currentColor,id,type,height,width,data,color,marker}:SparkLineProps) => {
   return (
-    <div>
+  
       <SparklineComponent
         id={id}
         height={height}
@@ -37,7 +37,7 @@ const SparkLine = ({currentColor,id,type,height,width,data,color,marker}:SparkLi
         >
           <Inject services={[SparklineTooltip]} />
       </SparklineComponent>
-    </div>
+
     
   )
 }
