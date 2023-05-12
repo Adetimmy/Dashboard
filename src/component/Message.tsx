@@ -9,8 +9,8 @@ const Message = () => {
 
           <div>
             <h5 className="dark:text-white font-semibold">{item.desc}</h5>
-            <p className="text-slate-400 text-sm">{item.message}</p>
-            <small className="text-slate-400 text-xs">{item.time}</small>
+            <p className="text-gray-400 text-sm">{item.message}</p>
+            <small className="text-gray-400 text-xs">{item.time}</small>
           </div>
         </div>
       ))}

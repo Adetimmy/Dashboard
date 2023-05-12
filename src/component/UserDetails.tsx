@@ -12,7 +12,7 @@ const UserDetails = () => {
 
           <div>
             <h5 className="dark:text-white font-semibold">{item.title}</h5>
-            <p className="text-slate-400 text-sm">{item.desc}</p>
+            <p className="text-gray-400 text-sm">{item.desc}</p>
           </div>
         </div>
       ))}

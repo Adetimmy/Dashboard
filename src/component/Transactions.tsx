@@ -1,7 +1,5 @@
-import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
-
-import { Button, LineChart } from '.'
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
+import { Button} from '.'
+import {recentTransactions} from '../data/dummy'
 import { useStateContext } from '../context/ContentProvider'
 import  DropDown  from './MonthDrop'
 
@@ -10,7 +8,7 @@ const Transactions = () => {
 const { currentMode, currentColor } = useStateContext()
     
   return (
-    <div className=' rounded-lg p-5 dark:bg-secondary-dark-bg w-[450px] md:w-[550px]'>
+    <div className=' rounded-2xl p-5 dark:bg-secondary-dark-bg w-[450px] md:w-[550px]'>
         <div className=' flex justify-between items-center mb-3'>
             <div>
                 <h3 className=' text-black dark:text-slate-500 font-semibold text-xl'>Recent Transactions</h3>
@@ -31,7 +29,7 @@ const { currentMode, currentColor } = useStateContext()
 
           <div className=''>
             <h5 className="dark:text-white font-semibold">{item.title}</h5>
-            <p className="text-slate-400 text-sm">{item.desc}</p>
+            <p className="text-gray-400 text-sm">{item.desc}</p>
           </div>
         </div>
 
@@ -54,7 +52,7 @@ const { currentMode, currentColor } = useStateContext()
           size='md'
         />
 
-        <p className='text-slate-400 text-sm'>36 recent transactions</p>
+        <p className='text-gray-400 text-sm'>36 recent transactions</p>
     </div>
 
     

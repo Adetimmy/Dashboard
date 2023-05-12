@@ -9,7 +9,7 @@ const UserNotification = () => {
 
           <div>
             <h5 className="dark:text-white font-semibold">{item.desc}</h5>
-            <p className="text-slate-400 text-sm">{item.message}</p>
+            <p className="text-gray-400 text-sm">{item.message}</p>
           </div>
         </div>
       ))}

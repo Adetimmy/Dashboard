@@ -16,7 +16,7 @@ const ChartItem = ({category,image,price,quantity,name, onClickAdd, onClickSub}:
 
     <div>
         <h5 className="dark:text-white font-semibold">{name}</h5>
-        <p className="text-slate-400 text-sm">{category}</p>
+        <p className="text-gray-400 text-sm">{category}</p>
        <div className='flex gap-8 mt-2 items-center'>
             <h4 className="dark:text-white font-semibold">${price * quantity}</h4>
             <div className="flex items-center border-1 border-r-0 border-color rounded">
