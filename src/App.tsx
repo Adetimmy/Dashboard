@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
@@ -73,9 +73,13 @@ export const App = () => {
                 <Route path='/stacked' element={<Stacked/>}/>
               </Routes>
             </div>
+            <Footer/>
         </div>
-        </div>
+       
+        </div> 
+        
       </BrowserRouter>  
+      
     </div>
   )
 }
